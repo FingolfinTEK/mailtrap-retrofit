@@ -17,4 +17,5 @@ dependencies {
     testCompile 'junit:junit:4.12'
     testCompile 'org.assertj:assertj-core:3.4.1'
     testCompile 'com.github.tomakehurst:wiremock:2.0.10-beta'
+    testCompile 'commons-io:commons-io:2.5'
 }

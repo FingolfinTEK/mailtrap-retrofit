@@ -1,0 +1,14 @@
+{
+  "id": 21160990,
+  "message_id": 209433906,
+  "filename": "trex-id.xls",
+  "attachment_type": "attachment",
+  "content_type": "application/vnd.ms-excel",
+  "content_id": "",
+  "transfer_encoding": "base64",
+  "attachment_size": 5120,
+  "created_at": "2016-06-14T08:51:25.224Z",
+  "updated_at": "2016-06-14T08:51:25.224Z",
+  "attachment_human_size": "5 KB",
+  "download_path": "/api/v1/inboxes/3/messages/209433906/attachments/21160990/download"
+}

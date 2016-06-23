@@ -1,0 +1,25 @@
+{
+  "id": 3,
+  "company_id": 1,
+  "name": "Test inbox",
+  "domain": "mailtrap.io",
+  "username": "1da91769512fb",
+  "password": "d71dfda027b54a",
+  "status": "active",
+  "max_size": 1000,
+  "emails_count": 997,
+  "emails_unread_count": 0,
+  "email_username": "example-username",
+  "email_username_enabled": false,
+  "email_domain": "inbox.mailtrap.io",
+  "last_message_sent_at_timestamp": 1380567707,
+  "smtp_ports": [
+    25,
+    465,
+    2525
+  ],
+  "pop3_ports": [
+    1100,
+    9950
+  ]
+}

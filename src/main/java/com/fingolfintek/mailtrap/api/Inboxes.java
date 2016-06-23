@@ -25,24 +25,4 @@ public interface Inboxes {
 
     @PATCH("/api/v1/inboxes/{id}/clean")
     Call<Inbox> cleanInbox(@Path("id") String id);
-
-    @GET("/api/v1/inboxes/{inboxId}/messages")
-    Call<List<Message>> listMessages(@Path("inboxId") String inboxId);
-
-    @GET("/api/v1/inboxes/{inboxId}/messages/{messageId}")
-    Call<Message> showMessage(@Path("inboxId") String inboxId, @Path("messageId") String messageId);
-
-    @DELETE("/api/v1/inboxes/{inboxId}/messages/{messageId}")
-    Call<Message> deleteMessage(@Path("inboxId") String inboxId, @Path("messageId") String messageId);
-
-    @GET("/api/v1/inboxes/{inboxId}/messages/{messageId}/attachments")
-    Call<List<Attachment>> listMessageAttachments(@Path("inboxId") String inboxId, @Path("messageId") String messageId);
-
-    @GET("/api/v1/inboxes/{inboxId}/messages/{messageId}/attachments/{attachmentId}")
-    Call<Message> showAttachment(
-            @Path("inboxId") String inboxId, @Path("messageId") String messageId, @Path("attachmentId") String attachmentId);
-
-    @GET("/api/v1/inboxes/{inboxId}/messages/{messageId}/attachments/{attachmentId}/download")
-    Call<ResponseBody> downloadAttachment(
-            @Path("inboxId") String inboxId, @Path("messageId") String messageId, @Path("attachmentId") String attachmentId);
 }
