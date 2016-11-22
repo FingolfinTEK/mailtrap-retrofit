@@ -1,0 +1,19 @@
+machine:
+  java:
+    version: oraclejdk8
+general:
+  artifacts:
+    - "/home/ubuntu/$CIRCLE_PROJECT_REPONAME/*.jar"
+test:
+  post:
+    - gradle build
+deployment:
+  staging:
+    branch: master
+    commands:
+      # Fetch github-release
+      - go get github.com/aktau/github-release
+      # Upload release to GitHub
+      - export TAG_NAME=`git describe --tags`
+      - github-release release --user $CIRCLE_PROJECT_USERNAME --repo $CIRCLE_PROJECT_REPONAME --tag $TAG_NAME --name "$CIRCLE_PROJECT_REPONAME-$TAG_NAME.jar"
+      - github-release upload --user $CIRCLE_PROJECT_USERNAME --repo $CIRCLE_PROJECT_REPONAME --tag $TAG_NAME --file /home/ubuntu/$CIRCLE_PROJECT_REPONAME/build/libs/$CIRCLE_PROJECT_REPONAME.jar --name "$CIRCLE_PROJECT_REPONAME-$TAG_NAME.jar"
