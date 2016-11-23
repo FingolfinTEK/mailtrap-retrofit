@@ -3,8 +3,11 @@ machine:
     version: oraclejdk8
 general:
   artifacts:
-    - "/home/ubuntu/$CIRCLE_PROJECT_REPONAME/*.jar"
+    - "build/libs/*.jar"
+    - "build/reports/*"
 test:
+  override:
+    - gradle check jacocoTestReport
   post:
     - gradle build
 deployment:

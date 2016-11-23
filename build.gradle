@@ -1,7 +1,16 @@
 apply plugin: 'java'
+apply plugin: 'jacoco'
 
 repositories {
     mavenCentral()
+}
+
+jacocoTestReport {
+    afterEvaluate {
+        classDirectories = files(classDirectories.files.collect {
+            fileTree(dir: it, exclude: 'com/fingolfintek/mailtrap/model/**')
+        })
+    }
 }
 
 dependencies {
