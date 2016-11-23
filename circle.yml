@@ -1,15 +1,13 @@
 machine:
   java:
     version: oraclejdk8
-general:
-  artifacts:
-    - "build/libs/*.jar"
-    - "build/reports/*"
 test:
   override:
     - gradle check jacocoTestReport
   post:
+    - cp -R build/reports/* $CIRCLE_ARTIFACTS
     - gradle build
+    - cp -R build/libs/* $CIRCLE_ARTIFACTS
 deployment:
   staging:
     branch: master
